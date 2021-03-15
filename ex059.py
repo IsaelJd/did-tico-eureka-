@@ -1,73 +1,40 @@
-prosseguir = ''
-continuar = ''
-while not continuar == 'N':
+# Calculadora com MENU
+from time import sleep
+sair = ''
+while not sair == 'ok':
+    numero1 = int(input('Digite um numero: '))
+    numero2 = int(input('Digite outro numero: '))
     escolha = 0
-    while not continuar == 'N':
-        numero1 = float(input('Digite um numero: '))
-        numero2 = float(input('Digite o outro numero: '))
+    while not escolha == 4:
         escolha = int(input('''Escolha uma opção
-    [1] Somar
-    [2] Multiplicar
-    [3] Saber o maior
-    [4] Novos Valores
-    [5] Sair
-    > '''))
-# Escolha 1 (Somando as os 2 input)
+[1] Soma
+[2] Multiplicar
+[3] Maior Valor
+[4] Novo numero
+[5] Sair
+> '''))
         if escolha == 1:
             print('Soma')
             print(f'{numero1} + {numero2} = {numero1 + numero2}')
-            print('-'*30)
-            continuar = str(input('Outra duvida? [S/N] ')).strip().upper()[0]
-            while not prosseguir == 'ok':
-                if continuar != 'S' and continuar != 'N':
-                    print('Opção INVÁLIDA')
-                    continuar = str(input('> ')).strip().upper()[0]
-                else:
-                    prosseguir = 'ok'
-            print('-'*30)
-# Escolha 3 (Multiplicando os 2 input)
+            print('=-='*30)
         elif escolha == 2:
-            print('Multiplicação')
+            print('Multiplicar')
             print(f'{numero1} x {numero2} = {numero1 * numero2}')
-            print('-'*30)
-            continuar = str(input('Outra duvida? [S/N] ')).strip().upper()[0]
-            while not prosseguir == 'ok':
-                if continuar != 'S' and continuar != 'N':
-                    print('Opção INVÁLIDA')
-                    continuar = str(input('> ')).strip().upper()[0]
-                else:
-                    prosseguir = 'ok'
-            print('-'*30)
-# Escolha 3 (Analisando os 2 input e retornado o maior valor)
+            print('=-='*30)
         elif escolha == 3:
-            print('Saber qual é maior.')
             if numero1 > numero2:
-                print(f'O numero {numero1} é o maior')
-                print('-'*30)
-            elif numero1 < numero2:
-                print(f'O numero {numero2} é o maior')
-                print('-'*30)
+                print(f'O numero {numero1} é maior que o numero {numero2}')
+                print('=-='*30)
             else:
-                print('Não tem numero maior')
-                print('-'*30)
-            continuar = str(input('Outra duvida? [S/N] ')).strip().upper()[0]
-            while not prosseguir == 'ok':
-                if continuar != 'S' and continuar != 'N':
-                    print('Opção INVÁLIDA')
-                    continuar = str(input('> ')).strip().upper()[0]
-                else:
-                    prosseguir = 'ok'
-                print('-'*30)
-# Escolhas 4 (Alterar os valores digitados)
+                print(f'O numero {numero2} é maior que o numero {numero1}')
+                print('=-='*30)
         elif escolha == 4:
-            print('Novos Valores')
-            print('Digite os Novos valores.')
-            print('-'*30)
-# Escolha 5 (Finalisando o progama)
+            print('=-='*30)
         elif escolha == 5:
-            continuar = 'N'
-# Escolha não listada
+            escolha = 4
+            sair = 'ok'
         else:
-            print('Opção INVÁLIDA.')
-            continuar = 'S'
+            print('Opção INVÁLIDA')
+print('Finalizando ....')
+sleep(1.5)
 print('FIM')
